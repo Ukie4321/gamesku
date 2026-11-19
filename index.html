@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Game Retro NES</title>
+    <title>MRZYB GAME - Main Game Retro</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body, html {
             margin: 0;
             padding: 0;
@@ -13,7 +15,55 @@
             height: 100%;
             background-color: #000000;
             overflow: hidden;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
         }
+
+        /* Bar Brand & Link Telegram */
+        .top-bar {
+            position: fixed;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            pointer-events: none;
+        }
+
+        .brand-badge {
+            pointer-events: auto;
+            background: rgba(15, 23, 42, 0.85);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            backdrop-filter: blur(4px);
+        }
+
+        .tg-link {
+            pointer-events: auto;
+            background: rgba(34, 158, 217, 0.92);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 5px 11px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .tg-link:hover {
+            background: #1c88be;
+        }
+
         #game {
             width: 100%;
             height: 100%;
@@ -21,12 +71,19 @@
     </style>
 </head>
 <body>
+    <div class="top-bar">
+        <div class="brand-badge">MRZYB GAME</div>
+        <a class="tg-link" href="https://t.me/mrzybstream" target="_blank" rel="noopener noreferrer">
+            Telegram @mrzybstream
+        </a>
+    </div>
+
     <div id="game"></div>
 
     <script>
         EJS_player = '#game';
-        EJS_core = 'nes'; // Diubah dari 'psx' ke 'nes'
-        EJS_gameUrl = 'Adventure.nes'; // Ganti sesuai nama file .nes kamu
+        EJS_core = 'nes'; // 'nes', 'snes', 'gba', 'segaMD', 'psx', dll.
+        EJS_gameUrl = 'Adventure.nes'; // Sesuaikan dengan nama file ROM di repo
         EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
         EJS_startOnLoaded = true;
     </script>
