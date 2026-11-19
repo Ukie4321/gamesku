@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Game Retro</title>
+    <title>Main Game Retro NES</title>
     <style>
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
-            background-color: #000000; /* Latar belakang hitam (Dark Mode) */
+            background-color: #000000;
             overflow: hidden;
         }
         #game {
@@ -23,25 +23,13 @@
     <div id="game"></div>
 
     <script>
-        // 1. Tentukan elemen wadah emulator
         EJS_player = '#game';
-
-        // 2. Pilih jenis konsol/core:
-        // 'psx' (PS1), 'nes' (Nintendo), 'snes' (Super Nintendo), 
-        // 'gba' (GameBoy Advance), 'segaMD' (Sega Genesis), 'n64' (Nintendo 64)
-        EJS_core = 'psx'; 
-
-        // 3. Nama file ROM kamu (harus sama persis dengan nama file di folder)
-        EJS_gameUrl = 'Adventure.zip'; 
-
-        // 4. Lokasi aset mesin EmulatorJS (mengambil langsung dari CDN gratis)
+        EJS_core = 'nes'; // Diubah dari 'psx' ke 'nes'
+        EJS_gameUrl = 'Adventure.nes'; // Ganti sesuai nama file .nes kamu
         EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
-
-        // 5. Otomatis langsung main begitu link dibuka!
-        EJS_startOnLoaded = true; 
+        EJS_startOnLoaded = true;
     </script>
-    
-    <!-- Memanggil script utama EmulatorJS -->
+
     <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
 </body>
 </html>
